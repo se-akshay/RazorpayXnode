@@ -1,0 +1,39 @@
+[
+  {
+    "title": "React Course",
+    "description": "Learn React from basics to advanced concepts including hooks and state management.",
+    "price": 100,
+    "imageUrl": "/react.webp",
+    "courseId" : 1
+  },
+  {
+    "title": "Node.js Course",
+    "description": "Master backend development with Node.js, Express, and REST APIs.",
+    "price": 120,
+    "imageUrl": "/node.webp",
+    "courseId" : 2
+
+  },
+  {
+    "title": "MongoDB Course",
+    "description": "Understand NoSQL databases and build scalable applications using MongoDB.",
+    "price": 90,
+    "imageUrl": "/mongodb.webp",
+    "courseId" : 3
+
+  },
+  {
+    "title": "JavaScript Course",
+    "description": "Deep dive into modern JavaScript including ES6+, async programming, and DOM manipulation.",
+    "price": 80,
+    "imageUrl": "/javascript.webp",
+    "courseId" : 4
+  },
+  {
+    "title": "Full Stack Course",
+    "description": "Become a full stack developer by learning frontend, backend, and database integration.",
+    "price": 200,
+    "imageUrl": "/fullstack.webp",
+    "courseId" : 5
+  }
+]

@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const razorpay = razorpayInstance();
 
-export const createOrder = async(req, res) => {
+const createOrder = async (req, res) => {
     const {courseId,amount} = req.body;
     const options = {
         amount: amount * 100,
@@ -20,12 +20,11 @@ export const createOrder = async(req, res) => {
             res.status(200).json({order});
         });
     } catch (error) {
-        success: false,
-        res.status(500).json({message: error.message});
+        return res.status(500).json({success: false, message: error.message });
     }
-}
+};
 
-export const verifyPayment = async(req, res) => {
+const verifyPayment = async (req, res) => {
     const {orderId, paymentId, signature} = req.body;
     // Genrerated signature = orderId + hmacobject + paymentId
     const secret = process.env.RAZORPAY_KEY_SECRET;
@@ -35,6 +34,7 @@ export const verifyPayment = async(req, res) => {
     if(generated_signature !== signature){
         return res.status(400).json({message: 'Invalid signature'});
     }
-    res.status(200).json({message: 'Payment verified successfully'});
-    
-}
+    res.status(200).json({ message: 'Payment verified successfully' });
+};
+
+module.exports = { createOrder, verifyPayment };
